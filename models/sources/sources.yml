@@ -1,0 +1,11 @@
+version: 2
+
+sources:
+  - name: DBT_MEDALLION
+    schema: OLTP
+    tables:
+      - name: CUSTOMER
+      - name: "ORDER"
+      - name: ORDERITEM
+      - name: PRODUCT
+      - name: SUPPLIER
