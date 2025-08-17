@@ -4,4 +4,6 @@
 ) }}
 
 SELECT *
-FROM {{ source('DBT_MEDALLION', 'ORDER') }}
+FROM {{ source('DBT_MEDALLION', 'ORDERS') }}
+
+

@@ -1,15 +1,35 @@
-Welcome to your new dbt project!
+# DBT Medallion Architecture Project (Bronze → Silver → Gold)
 
-### Using the starter project
+## 🎯 Objective
+This project demonstrates how to build a data pipeline using **DBT** and the **Medallion Architecture**.  
+It ingests transactional data (Customers, Orders, OrderItems, Products, Suppliers) into **Snowflake** (or any warehouse), and transforms it into a **star schema** with dimensions and facts.
 
-Try running the following commands:
-- dbt run
-- dbt test
+---
 
+## 🏗️ Architecture
+- **Bronze Layer (Raw)**  
+  Direct ingestion from source OLTP tables.  
+  Stored in schema: `BRONZE`.
 
-### Resources:
-- Learn more about dbt [in the docs](https://docs.getdbt.com/docs/introduction)
-- Check out [Discourse](https://discourse.getdbt.com/) for commonly asked questions and answers
-- Join the [dbt community](https://getdbt.com/community) to learn from other analytics engineers
-- Find [dbt events](https://events.getdbt.com) near you
-- Check out [the blog](https://blog.getdbt.com/) for the latest news on dbt's development and best practices
+- **Silver Layer (Cleansed)**  
+  Standardized, type-correct, conformed data models.  
+  Stored in schema: `SILVER`.  
+  Examples: `silver_customers`, `silver_orders`, etc.
+
+- **Gold Layer (Dimensional)**  
+  Analytical models optimized for reporting.  
+  Stored in schema: `GOLD`.  
+  Examples: `dim_customer`, `dim_product`, `dim_supplier`, `dim_date`, `fact_sales`.
+
+---
+
+## 📂 Project Structure
+├── models/
+│ ├── DBT_MEDALLION
+│ │ ├── bronze/ # Raw sources
+│ │ ├── silver/ # Cleansed staging models
+│ │ ├── gold/ # Dimensional star schema
+│ └── schema.yml # Tests + documentation
+├── seeds/
+├── dbt_project.yml
+└── README.md
