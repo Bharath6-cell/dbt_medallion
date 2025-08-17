@@ -42,3 +42,8 @@ models:
       +schema: BRONZE
     sources:
       +schema: OLTP       # source schema
+    silver:
+      materialized: incremental  # default for bronze models
+      +schema: SILVER
+    gold:
+      +schema: GOLD

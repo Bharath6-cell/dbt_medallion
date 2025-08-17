@@ -5,7 +5,7 @@ sources:
     schema: OLTP
     tables:
       - name: CUSTOMER
-      - name: "ORDER"
+      - name: ORDERS
       - name: ORDERITEM
       - name: PRODUCT
       - name: SUPPLIER
