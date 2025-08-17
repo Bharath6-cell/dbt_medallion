@@ -5,7 +5,7 @@
 ) }}
 
 with dates as (
-    select dateadd(day, seq4(), '2020-01-01'::date) as date_key
+    select dateadd(day, seq4(), '2011-01-01'::date) as date_key
     from table(generator(rowcount => 3650))  -- 10 years
 )
 select
