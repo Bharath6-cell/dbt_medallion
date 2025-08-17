@@ -7,18 +7,18 @@ It ingests transactional data (Customers, Orders, OrderItems, Products, Supplier
 ---
 
 ## 🏗️ Architecture
-- **Bronze Layer (Raw)**  
+- **BRONZE Layer (Raw)**  
   Direct ingestion from source OLTP tables.  
-  Stored in schema: `BRONZE`.
+  Stored in schema: `DBT_BMANDHA_BRONZE`.
 
-- **Silver Layer (Cleansed)**  
+- **SILVER Layer (Cleansed)**  
   Standardized, type-correct, conformed data models.  
-  Stored in schema: `SILVER`.  
+  Stored in schema: `DBT_BMANDHA_SILVER`.  
   Examples: `silver_customers`, `silver_orders`, etc.
 
-- **Gold Layer (Dimensional)**  
+- **GOLD Layer (Dimensional)**  
   Analytical models optimized for reporting.  
-  Stored in schema: `GOLD`.  
+  Stored in schema: `DBT_BMANDHA_GOLD`.  
   Examples: `dim_customer`, `dim_product`, `dim_supplier`, `dim_date`, `fact_sales`.
 
 ---
